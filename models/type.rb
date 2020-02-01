@@ -18,6 +18,7 @@ class Type
     @id = results.first['id'].to_i
   end
 
+ # TO TEST
   def update
     sql = 'UPDATE types
     SET name = $1

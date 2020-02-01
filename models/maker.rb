@@ -1,6 +1,5 @@
 require_relative('../db/sql_runner.rb')
 
- # delete, delete all, all, find and potions methods
 class Maker
 
   attr_reader :id, :name, :evil, :certified
@@ -21,11 +20,12 @@ class Maker
     @id = results.first['id'].to_i
   end
 
+# TO TEST
   def update
     sql = 'UPDATE makers
     SET (name, evil, certified) = ($1, $2, $3)
     WHERE id = $4'
-    values = [@name, @evil, @certified]
+    values = [@name, @evil, @certified, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -56,6 +56,7 @@ class Maker
     return Maker.new(results.first)
   end
 
+# TO TEST
   def potions
     sql = "SELECT * FROM potions
     WHERE maker_id = $1"
