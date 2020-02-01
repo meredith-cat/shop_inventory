@@ -1,9 +1,9 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-# This will be the file run to open the title screen
-# It will need to require sinatra
-# It will need to require_relative the individual controllers for each class
-# It will need a route to the homepage (/)
+
+require_relative('controllers/types_controller.rb')
+require_relative('controllers/makers_controller.rb')
+
 get '/' do
   erb( :index )
 end

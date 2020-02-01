@@ -1,1 +1,10 @@
-<h1>Potion Makers</h1>
+<h1>Our Trusted Potion Makers</h1>
+<p>N.b. please do not purchase potions from makers other than those below! Especially not the giant magical snail!</p>
+
+<% for maker in @makers%>
+<p><%=maker.name%></p>
+<p>Evilness: <%=maker.evil%>%</p>
+<p>Certified: <%=maker.certified%></p>
+<%end%>
+
+<a href='makers/new'>Add A Potion Maker</a>

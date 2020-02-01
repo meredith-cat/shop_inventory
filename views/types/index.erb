@@ -1,1 +1,16 @@
 <h1>Potion Types</h1>
+
+<% for type in @types%>
+<p><%=type.name%></p>
+
+<%end%>
+
+<h2>Add A Potion Type</h2>
+<form method="post" action="/types">
+
+  <label for="name">New Potion Type:</label>
+  <input id="name" type="text" name="name"/>
+
+  <input type="submit"  value="Add Potion Type">
+
+</form>

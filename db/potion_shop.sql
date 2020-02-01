@@ -1,8 +1,7 @@
 -- This file creates the tables within the database
-
+DROP TABLE IF EXISTS potions;
 DROP TABLE IF EXISTS types;
 DROP TABLE IF EXISTS makers;
-DROP TABLE IF EXISTS potions;
 
 CREATE TABLE types(
   id SERIAL PRIMARY KEY,
@@ -12,7 +11,8 @@ CREATE TABLE types(
 CREATE TABLE makers(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  evil BOOLEAN
+  evil INT,
+  certified BOOLEAN
 );
 
 CREATE TABLE potions(
