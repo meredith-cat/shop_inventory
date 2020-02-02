@@ -23,3 +23,9 @@ get '/makers/:id' do
   @maker = Maker.find(params[:id])
   erb(:"makers/show")
 end
+
+post '/makers/:id/delete' do
+  @maker = Maker.find(params[:id])
+  @maker.delete
+  redirect to ('/makers')
+end

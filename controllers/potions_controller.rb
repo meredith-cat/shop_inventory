@@ -26,5 +26,5 @@ end
 post '/potions' do
   @potion = Potion.new(params)
   @potion.save
-  redirect to ('/')
+  redirect to ('/potions')
 end

@@ -5,15 +5,18 @@
     <th>Name</th>
     <th>Evilness</th>
     <th>Certified</th>
+    <th>Delete</th>
   </tr>
   <% for maker in @makers%>
   <tr>
     <td><a href="makers/<%=maker.id%>"><%=maker.name%></a></td>
     <td><%=maker.evil%>%</td>
     <td><%=maker.certified%></td>
-  </tr>
-  <%end%>
-</table>
+    <td><form method="post" action='/makers/<%= maker.id %>/delete'>
+    <input type="submit"  value="Delete"></td>
+    </tr>
+    <%end%>
+  </table>
+<p>Deleting a maker will delete all associated potions. Proceed with caution.</p>
 
-
-<a href='makers/new'>Add A Potion Maker</a>
+  <a href='makers/new'>Add A Potion Maker</a>

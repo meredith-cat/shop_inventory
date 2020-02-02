@@ -4,22 +4,26 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Type</th>
     <th>Quantity</th>
     <th>Cost Price</th>
     <th>Sale Price</th>
+    <th>Markup</th>
     <th>Maker</th>
-    <th>Type</th>
+
   </tr>
 
   <% for potion in @potions%>
   <tr>
     <td><a href="potions/<%=potion.id%>"><%=potion.name%></a></td>
     <td><%=potion.description%></td>
+    <td><%=potion.type.name%></td>
     <td><%=potion.quantity%></td>
     <td><%=potion.cost_price%></td>
     <td><%=potion.sale_price%></td>
+    <td><%=potion.markup%></td>
     <td><a href="http://localhost:4567/makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
-    <td><%=potion.type.name%></td>
+
   </tr>
   <%end%>
   <tfoot>
