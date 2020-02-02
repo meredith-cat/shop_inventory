@@ -13,13 +13,13 @@
 
   <% for potion in @potions%>
   <tr>
-    <td><%=potion.name%></td>
+    <td><a href="potions/<%=potion.id%>"><%=potion.name%></a></td>
     <td><%=potion.description%></td>
     <td><%=potion.quantity%></td>
     <td><%=potion.cost_price%></td>
     <td><%=potion.sale_price%></td>
-    <td><%=potion.maker_id%></td>
-    <td><%=potion.type_id%></td>
+    <td><%=potion.maker.name%></td>
+    <td><%=potion.type.name%></td>
   </tr>
   <%end%>
 </table>
