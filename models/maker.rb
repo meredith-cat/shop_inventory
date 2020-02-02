@@ -66,13 +66,4 @@ class Maker
     return potions
   end
 
-  # def zombie()
-  #   sql = "SELECT * FROM zombies
-  #   WHERE id = $1"
-  #   values = [@zombie_id]
-  #   results = SqlRunner.run( sql, values )
-  #   return Zombie.new( results.first )
-  # end
-
-
 end

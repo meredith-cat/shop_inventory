@@ -53,23 +53,24 @@ class Type
     return Type.new(results.first)
   end
 
-  def potions
-    sql = "SELECT * FROM potions
-    WHERE type_id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    potions = results.map{|potion| Potion.new(potion)}
-    return potions
-  end
-
-  def makers
-    sql = 'SELECT * FROM makers
-    INNER JOIN potions on potions.maker_id = makers.id
-    WHERE potions.type_id = $1;'
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    makers = results.map{|maker| Maker.new(maker)}
-    return makers
-  end
+# Not yet tested
+  # def potions
+  #   sql = "SELECT * FROM potions
+  #   WHERE type_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   potions = results.map{|potion| Potion.new(potion)}
+  #   return potions
+  # end
+  #
+  # def makers
+  #   sql = "SELECT * from makers
+  #   INNER JOIN potions on maker_id
+  #   WHERE type_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   makers = results.map{|maker| Maker.new(maker)}
+  #   return makers
+  # end
 
 end

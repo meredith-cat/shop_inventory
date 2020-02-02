@@ -2,7 +2,12 @@
 
 <% for type in @types%>
 <p><%=type.name%></p>
-<a href="#">View <%=type.name%> Potions</a>
+
+
+<!-- I want to be able to view the potions for each type.
+  I have potions method I can call on a type.
+  I don't know how to display this info!
+  <a href="#">View <%=type.name%> Potions</a> -->
 
 <form method="post" action="/types/<%=type.id%>">
   <label for="name">Edit Potion Type:</label>
