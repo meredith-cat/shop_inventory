@@ -24,7 +24,7 @@ the names of the keys in the options hash -->
     Maker:
     <select name="maker_id">
       <% for maker in @makers %>
-      <option value="<%= maker.id %>"><%= maker.id %></option>
+      <option value="<%= maker.id %>"><%= maker.name %></option>
       <% end %>
     </select>
   </label>
@@ -33,7 +33,7 @@ the names of the keys in the options hash -->
     Type:
     <select name="type_id">
       <% for type in @types %>
-      <option value="<%= type.id %>"><%= type.id %></option>
+      <option value="<%= type.id %>"><%= type.name %></option>
       <% end %>
     </select>
   </label>

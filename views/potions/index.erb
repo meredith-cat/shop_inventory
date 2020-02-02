@@ -22,7 +22,14 @@
     <td><%=potion.type.name%></td>
   </tr>
   <%end%>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td>Totals:</td>
+      <td><%= @potions.map{|potion| potion.quantity.to_i}.reduce(:+) %></td>
+      <td></td>
+    </tr>
+  </tfoot>
 </table>
 
-
-<!-- <td><%= @potions.map{|potion| potion.quantity.to_i}.reduce(:+) %></td> -->
+<a href="/potions/new">Add A Potion</a>
