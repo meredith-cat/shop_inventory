@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Maker
 
-  attr_reader :id, :name, :evil, :certified
+  attr_accessor :id, :name, :evil, :certified
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -61,7 +61,7 @@ class Maker
     sql = "SELECT * FROM potions
     WHERE maker_id = $1"
     values = [@id]
-    makers = SqlRunner.run(sql, values)
+    results = SqlRunner.run(sql, values)
     potions = results.map{|potion| Potion.new(potion)}
     return potions
   end

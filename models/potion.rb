@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Potion
 
-  attr_reader :id, :name, :description, :quantity, :cost_price, :sale_price, :maker_id, :type_id
+  attr_accessor :id, :name, :description, :quantity, :cost_price, :sale_price, :maker_id, :type_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -65,7 +65,7 @@ class Potion
    WHERE id = $1"
    values = [@maker_id]
    results = SqlRunner.run( sql, values )
-   return Maker.new( results.first )
+   return Maker.new(results.first)
  end
 
 
@@ -74,7 +74,7 @@ class Potion
     WHERE id = $1"
     values = [@type_id]
     results = SqlRunner.run(sql, values)
-    return Maker.new(results.first)
+    return Type.new(results.first)
   end
 
   def markup

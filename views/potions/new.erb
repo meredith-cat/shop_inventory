@@ -1,5 +1,44 @@
 <h1>Add A Potion</h1>
+<!-- form inputs’ name attributes match
+the names of the keys in the options hash -->
+<!-- {'name' => 'Chicken Soup', 'description' => 'It\'s just some chicken soup.', 'quantity' => 2, 'cost_price' => 2, 'sale_price' => 3, 'maker_id' => maker1.id, 'type_id' => type1.id} -->
+
 <form action="/potions" method="post">
 
-<input type="submit" value="Submit">
+  <label for="name">Potion Name:</label>
+  <input id="name" type="text" name="name"/>
+
+  <label for="description">Description:</label>
+  <input id="description" type="text" name="description"/>
+
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity"/>
+
+  <label for="cost_price">Cost Price:</label>
+  <input id="cost_price" type="number" name="cost_price"/>
+
+  <label for="sale_price">Sale Price:</label>
+  <input id="sale_price" type="number" name="sale_price"/>
+
+  <label>
+    Maker:
+    <select name="maker_id">
+      <% for maker in @makers %>
+      <option value="<%= maker.id %>"><%= maker.id %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Type:
+    <select name="type_id">
+      <% for type in @types %>
+      <option value="<%= type.id %>"><%= type.id %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" name="submit" value="Enter">
+
+
 </form>

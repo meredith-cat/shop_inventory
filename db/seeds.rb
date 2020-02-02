@@ -15,7 +15,7 @@ type2.save
 type3 = Type.new({'name' => 'magic'})
 type3.save
 
-maker1 = Maker.new({'name' => 'Barry the Unicorn', 'evilness' => 1, 'certified' => true})
+maker1 = Maker.new({'name' => 'Barry the Unicorn', 'evil' => 1, 'certified' => true})
 maker1.save
 maker2 = Maker.new({'name' => 'Llandalf the Welsh', 'evil' => 5, 'certified' => true})
 maker2.save
