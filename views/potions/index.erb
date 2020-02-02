@@ -1,8 +1,39 @@
 <h1>All Potions</h1>
 
-<%# This would be a great place for a table... %>
-
-<% for potion in @potions%>
-<p><%=potion.name%></p>
-
-<%end%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Maker Name</th>
+    <th>Potion Type</th>
+    <th>Cost Price</th>
+    <th>Sale Price</th>
+    <th>Markup</th>
+    <th>Quantity</th>
+  </tr>
+  <% for potion in @potions%>
+  <tr>
+    <td><a href="/potions/<%=potion.id%>"><%=potion.name%></a></td>
+    <td><%=potion.description%></td>
+    <td><a href="makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
+    <td><%=potion.type.name%></td>
+    <td><%=potion.cost_price%></td>
+    <td><%=potion.sale_price%></td>
+    <td><%=potion.markup%></td>
+    <td><%=potion.quantity%></td>
+  </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Totals:</td>
+      <td><%= @potions.map{|potion| potion.cost_price.to_i}.reduce(:+) %></td>
+      <td><%= @potions.map{|potion| potion.sale_price.to_i}.reduce(:+) %></td>
+      <td><%= @potions.map{|potion| potion.markup.to_i}.reduce(:+) %></td>
+      <td><%= @potions.map{|potion| potion.quantity.to_i}.reduce(:+) %></td>
+    </tr>
+  </tfoot>
+</table>
+<a href="potions/new">Add A Potion</a>

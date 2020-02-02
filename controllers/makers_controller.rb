@@ -18,3 +18,8 @@ end
 get '/makers/new' do
   erb(:"makers/new")
 end
+
+get '/makers/:id' do
+  @maker = Maker.find(params[:id])
+  erb(:"makers/show")
+end

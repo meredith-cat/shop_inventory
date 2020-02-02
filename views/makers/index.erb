@@ -2,7 +2,7 @@
 <p>N.b. please do not purchase potions from makers other than those below! Especially not the giant magical snail!</p>
 
 <% for maker in @makers%>
-<p><%=maker.name%></p>
+<p><a href="makers/<%=maker.id%>"><%=maker.name%></a></p>
 <p>Evilness: <%=maker.evil%>%</p>
 <p>Certified: <%=maker.certified%></p>
 <%end%>

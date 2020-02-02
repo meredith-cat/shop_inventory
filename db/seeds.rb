@@ -19,12 +19,12 @@ maker1 = Maker.new({'name' => 'Barry the Unicorn', 'evilness' => 1, 'certified' 
 maker1.save
 maker2 = Maker.new({'name' => 'Llandalf the Welsh', 'evil' => 5, 'certified' => true})
 maker2.save
-maker3 = Maker.new({'name' => 'The Wimbledon Witch', 'evil' => 99, 'certified' => false})
+maker3 = Maker.new({'name' => 'The Witch', 'evil' => 99, 'certified' => false})
 maker3.save
 
-potion1 = Potion.new({'name' => 'Love Potion No.9', 'description' => 'A powerful love potion with built in theme tune.', 'quantity' => 9, 'cost_price' => 4, 'sale_price' => 10, 'maker_id' => maker1.id, 'type_id' => type3.id})
+potion1 = Potion.new({'name' => 'Love Potion No.9', 'description' => 'A powerful love potion (comes with free cassette).', 'quantity' => 9, 'cost_price' => 4, 'sale_price' => 10, 'maker_id' => maker1.id, 'type_id' => type3.id})
 potion1.save
-potion2 = Potion.new({'name' => 'Dead-Quick', 'description' => 'Kills your enemies dead quick!', 'quantity' => 1, 'cost_price' => 1, 'sale_price' => 100, 'maker_id' => maker3.id, 'type_id' => type2.id})
+potion2 = Potion.new({'name' => 'Dead-Quick', 'description' => 'Kills your enemies dead, quick!', 'quantity' => 1, 'cost_price' => 1, 'sale_price' => 100, 'maker_id' => maker3.id, 'type_id' => type2.id})
 potion2.save
 potion3 = Potion.new({'name' => 'Drink Me', 'description' => 'Makes you bigger...or was it smaller?', 'quantity' => 13, 'cost_price' => 6, 'sale_price' => 15, 'maker_id' => maker1.id, 'type_id' => type3.id})
 potion3.save

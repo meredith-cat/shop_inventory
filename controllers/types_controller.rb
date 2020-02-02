@@ -14,3 +14,15 @@ post '/types' do
   @type.save
   redirect to("/types")
 end
+
+post '/types/:id' do
+  @type = Type.new(params)
+  @type.update
+  redirect to ('/types')
+end
+
+post '/types/:id/delete' do
+  @type = Type.find(params[:id])
+  @type.delete
+  redirect to('/types')
+end

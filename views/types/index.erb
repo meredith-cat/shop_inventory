@@ -2,7 +2,14 @@
 
 <% for type in @types%>
 <p><%=type.name%></p>
+<a href="#">View <%=type.name%> Potions</a>
 
+<form method="post" action="/types/<%=type.id%>">
+  <label for="name">Edit Potion Type:</label>
+  <input id="name" type="text" name="name"/>
+  <input type="submit"  value="Update Potion Type">
+
+</form>
 <%end%>
 
 <h2>Add A Potion Type</h2>
@@ -10,7 +17,13 @@
 
   <label for="name">New Potion Type:</label>
   <input id="name" type="text" name="name"/>
-
   <input type="submit"  value="Add Potion Type">
 
 </form>
+
+<!--
+This delete form causes all associated entries with that potion type to be deleted because of the delete cascade function...approach with caution - maybe add a warning popup.
+
+<form action="/types/<%= type.id %>/delete" method="POST">
+  <input type="submit" value="delete" />
+</form> -->

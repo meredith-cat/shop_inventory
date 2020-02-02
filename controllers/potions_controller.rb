@@ -13,3 +13,20 @@ get '/potions' do
   @potions = Potion.all
   erb (:"potions/index")
 end
+
+post '/potions' do
+  @potion = Potion.new(params)
+  @potion.save
+  redirect to("/potions")
+end
+
+get '/potions/new' do
+  @makers = Maker.all
+  @types = Type.all
+  erb(:'potions/new')
+end
+
+get '/potions/:id' do
+  @potion = Potion.find(params[:id])
+  erb(:'potions/show')
+end

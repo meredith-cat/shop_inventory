@@ -65,8 +65,7 @@ class Potion
     WHERE id = $1"
     values = [@maker_id]
     results = SqlRunner.run(sql, values)
-    maker_data = results.map {|maker| Maker.new(maker)}
-    return maker_data
+    return Maker.new(results.first)
   end
 
   def type
@@ -74,8 +73,11 @@ class Potion
     WHERE id = $1"
     values = [@type_id]
     results = SqlRunner.run(sql, values)
-    type_data = results.map {|type| Type.new(type)}
-    return type_data
+    return Type.new(results.first)
+  end
+
+  def markup
+    @markup = (@sale_price.to_i) - (@cost_price.to_i)
   end
 
 end
