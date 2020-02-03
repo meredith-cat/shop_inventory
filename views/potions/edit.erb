@@ -22,7 +22,7 @@
     <select name="maker_id">
       <% @makers.each do |maker| %>
       <option <%= "selected" if @potion.maker_id == maker.id %>
-        value=<%= maker.id %>> <%= maker.name %></option>
+        value=<%= maker.id %> selected> <%= maker.name %></option>
       <% end %>
     </select>
   </label>
@@ -30,8 +30,9 @@
   <label>
     Type:
     <select name="type_id">
-      <% for type in @types %>
-      <option value="<%= type.id %>"><%= type.name %></option>
+      <% @types.each do |type| %>
+      <option <%= "selected" if @potion.type_id == type.id %>
+        value=<%= type.id %> selected> <%= type.name %></option>
       <% end %>
     </select>
   </label>

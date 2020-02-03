@@ -9,6 +9,7 @@ also_reload( '../models/*' )
 
 get '/potions' do
   @potions = Potion.all
+  @makers = Maker.all
   erb (:"potions/index")
 end
 

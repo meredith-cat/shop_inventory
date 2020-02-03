@@ -2,6 +2,15 @@
 
 <p>View Potions by Maker:</p>
 
+<form action="/potions/maker/" method="get">
+  <select name="maker_id">
+    <% for maker in @makers %>
+    <option value="<%= maker.id %>"><%= maker.name %></option>
+    <% end %>
+  </select>
+<input type="submit" name="submit" value="Enter">
+</form>
+
 <table>
   <tr>
     <th>Name</th>
