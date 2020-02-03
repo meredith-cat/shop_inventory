@@ -81,6 +81,14 @@ class Potion
     @markup = (@sale_price.to_i) - (@cost_price.to_i)
   end
 
+  def self.find_by_maker(id)
+    sql = 'SELECT * FROM potions
+    WHERE maker_id = $1'
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    potions = results.map {|potion| Potion.new(potion)}
+    return potions
+  end
 
 
 

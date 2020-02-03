@@ -19,11 +19,19 @@ get '/potions/new' do
   erb(:"potions/new")
 end
 
-get '/potions/maker/:id' do
-  maker = Maker.find(params[:id])
-  @potions = maker.potions
+get '/potions/maker/' do
+  id = params[:maker_id]
+  # potions by maker method to return all potions for that maker
+  @potions = Potion.find_by_maker(id)
+  @makers = Maker.all
   erb (:"potions/index")
 end
+
+# get '/potions/maker/:id' do
+#   maker = Maker.find(params[:id])
+#   @potions = maker.potions
+#   erb (:"potions/index")
+# end
 
 get '/potions/:id' do
   @potion = Potion.find(params[:id])
