@@ -10,7 +10,7 @@
     <th>Sale Price</th>
     <th>Markup</th>
     <th>Maker</th>
-
+    <th>Delete</th>
   </tr>
 
   <% for potion in @potions%>
@@ -23,7 +23,8 @@
     <td><%=potion.sale_price%></td>
     <td><%=potion.markup%></td>
     <td><a href="http://localhost:4567/makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
-
+    <td><form method="post" action='/potions/<%= potion.id %>/delete'>
+    <input type="submit"  value="Delete"></td>
   </tr>
   <%end%>
   <tfoot>

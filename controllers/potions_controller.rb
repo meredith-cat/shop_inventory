@@ -28,3 +28,9 @@ post '/potions' do
   @potion.save
   redirect to ('/potions')
 end
+
+post '/potions/:id/delete' do
+  @potion = Potion.find(params[:id])
+  @potion.delete
+  redirect to ('/potions')
+end
