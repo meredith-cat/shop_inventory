@@ -20,8 +20,8 @@ CREATE TABLE potions(
   name VARCHAR (255),
   description VARCHAR (255),
   quantity INT,
-  cost_price INT,
-  sale_price INT,
+  cost_price FLOAT,
+  sale_price FLOAT,
   maker_id INT REFERENCES makers(id) ON DELETE CASCADE,
   type_id INT REFERENCES types(id) ON DELETE CASCADE
 );

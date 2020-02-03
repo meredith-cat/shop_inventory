@@ -78,7 +78,7 @@ class Potion
   end
 
   def markup
-    @markup = (@sale_price.to_i) - (@cost_price.to_i)
+    @markup = (@sale_price.to_f) - (@cost_price.to_f)
   end
 
   def self.find_by_maker(id)

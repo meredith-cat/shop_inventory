@@ -1,7 +1,6 @@
 body {
-  background: url('/images/bottles.jpeg');
+  background: url('/images/background.png');
   background-size: 100%;
-  background-repeat: no-repeat;
   color: white;
 }
 
@@ -12,4 +11,9 @@ a, a:link, a:visited {
 
 a:hover, a:active, a:focus {
   color: #e5ffe5;
+}
+
+img{
+ max-width:30%;
+ max-height:30%;
 }
