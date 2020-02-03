@@ -10,6 +10,7 @@ also_reload( '../models/*' )
 get '/potions' do
   @potions = Potion.all
   @makers = Maker.all
+  @types = Type.all
   erb (:"potions/index")
 end
 
@@ -21,17 +22,19 @@ end
 
 get '/potions/maker/' do
   id = params[:maker_id]
-  # potions by maker method to return all potions for that maker
   @potions = Potion.find_by_maker(id)
   @makers = Maker.all
+  @types = Type.all
   erb (:"potions/index")
 end
 
-# get '/potions/maker/:id' do
-#   maker = Maker.find(params[:id])
-#   @potions = maker.potions
-#   erb (:"potions/index")
-# end
+get '/potions/type/' do
+  id = params[:type_id]
+  @potions = Potion.find_by_type(id)
+  @makers = Maker.all
+  @types = Type.all
+  erb (:"potions/index")
+end
 
 get '/potions/:id' do
   @potion = Potion.find(params[:id])

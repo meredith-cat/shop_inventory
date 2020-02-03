@@ -1,14 +1,24 @@
-<h1>All The Potions</h1>
+<h1><a href="/potions">All The Potions</a></h1>
 
 <p>View Potions by Maker:</p>
 <form method="get" action="/potions/maker/">
-   <select id=“potion-by-maker-select" name="maker_id">
+   <select name="maker_id">
     <%for maker in @makers%>
     <option value="<%=maker.id%>"> <%=maker.name%> </option>
     <% end %>
    </select>
    <input type="submit" value="Filter by Maker">
   </form>
+
+  <p>View Potions by Type:</p>
+  <form method="get" action="/potions/type/">
+     <select name="type_id">
+      <%for type in @types%>
+      <option value="<%=type.id%>"> <%=type.name%> </option>
+      <% end %>
+     </select>
+     <input type="submit" value="Filter by Type">
+    </form>
 
 
 <table>

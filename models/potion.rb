@@ -90,6 +90,13 @@ class Potion
     return potions
   end
 
-
+  def self.find_by_type(id)
+    sql = 'SELECT * FROM potions
+    WHERE type_id = $1'
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    potions = results.map {|potion| Potion.new(potion)}
+    return potions
+  end
 
 end
