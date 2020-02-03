@@ -1,1 +1,37 @@
 <h1>Edit A Potion</h1>
+<form action="/potions" method="post">
+
+  <label for="name">Potion Name:</label>
+  <input id="name" type="text" name="name" value="<%= @potion.name %>"/>
+
+  <label for="description">Description:</label>
+  <input id="description" type="text" name="description" value="<%= @potion.description %>"/>
+
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity" value="<%= @potion.quantity %>"/>
+
+  <label for="cost_price">Cost Price:</label>
+  <input id="cost_price" type="number" name="cost_price" value="<%= @potion.cost_price %>"/>
+
+  <label for="sale_price">Sale Price:</label>
+  <input id="sale_price" type="number" name="sale_price" value="<%= @potion.sale_price %>"/>
+
+  <label>
+    Maker:
+    <select name="maker_id">
+      <% for maker in @makers %>
+      <option value="<%= maker.id %>"><%= maker.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Type:
+    <select name="type_id">
+      <% for type in @types %>
+      <option value="<%= type.id %>"><%= type.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+</form>

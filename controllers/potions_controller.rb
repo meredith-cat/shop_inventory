@@ -23,14 +23,21 @@ get '/potions/:id' do
   erb(:'potions/show')
 end
 
-post '/potions' do
-  @potion = Potion.new(params)
-  @potion.save
-  redirect to ('/potions')
-end
-
 post '/potions/:id/delete' do
   @potion = Potion.find(params[:id])
   @potion.delete
+  redirect to ('/potions')
+end
+
+get '/potions/:id/edit' do
+  @potion = Potion.find(params[:id])
+  @makers = Maker.all
+  @types = Type.all
+  erb(:'potions/edit')
+end
+
+post '/potions' do
+  @potion = Potion.new(params)
+  @potion.save
   redirect to ('/potions')
 end

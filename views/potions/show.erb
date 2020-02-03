@@ -6,3 +6,6 @@
 <p><%=@potion.sale_price%></p>
 <p><%=@potion.maker.name%></p>
 <p><%=@potion.type.name%></p>
+
+<td><form method="get" action='/potions/<%=@potion.id%>/edit'>
+  <input type="submit"  value="Edit"></td>

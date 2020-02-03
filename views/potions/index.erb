@@ -11,6 +11,7 @@
     <th>Markup</th>
     <th>Maker</th>
     <th>Delete</th>
+    <th>Edit</th>
   </tr>
 
   <% for potion in @potions%>
@@ -25,6 +26,7 @@
     <td><a href="http://localhost:4567/makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
     <td><form method="post" action='/potions/<%= potion.id %>/delete'>
     <input type="submit"  value="Delete"></td>
+    <td>Edit?</td>
   </tr>
   <%end%>
   <tfoot>
