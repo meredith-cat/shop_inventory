@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('pry')
 
 require_relative('../models/potion.rb')
 require_relative('../models/maker.rb')

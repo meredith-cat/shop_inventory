@@ -19,23 +19,23 @@
 <!-- Correct values not preselected. -->
 <label>
     Maker:
+  </label>
     <select name="maker_id">
       <% @makers.each do |maker| %>
       <option <%= "selected" if @potion.maker_id == maker.id %>
-        value=<%= maker.id %> selected> <%= maker.name %></option>
+        value=<%= maker.id %>> <%= maker.name %></option>
       <% end %>
     </select>
-  </label>
 
-  <label>
+  <label for="type_id">
     Type:
+  </label>
     <select name="type_id">
       <% @types.each do |type| %>
       <option <%= "selected" if @potion.type_id == type.id %>
-        value=<%= type.id %> selected> <%= type.name %></option>
+        value=<%= type.id %>> <%= type.name %></option>
       <% end %>
     </select>
-  </label>
 
   <input type="submit" name="submit" value="Update">
 

@@ -8,11 +8,11 @@ class Potion
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
-    @quantity = options['quantity']
-    @cost_price = options['cost_price']
-    @sale_price = options['sale_price']
-    @maker_id = options['maker_id']
-    @type_id = options['type_id']
+    @quantity = options['quantity'].to_i
+    @cost_price = options['cost_price'].to_f
+    @sale_price = options['sale_price'].to_f
+    @maker_id = options['maker_id'].to_i
+    @type_id = options['type_id'].to_i
   end
 
   def save

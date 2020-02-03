@@ -3,12 +3,6 @@
 <% for type in @types%>
 <p><%=type.name%></p>
 
-
-<!-- I want to be able to view the potions for each type.
-  I have potions method I can call on a type.
-  I don't know how to display this info!
-  <a href="#">View <%=type.name%> Potions</a> -->
-
 <form method="post" action="/types/<%=type.id%>">
   <label for="name">Edit Potion Type:</label>
   <input id="name" type="text" name="name"/>
@@ -26,14 +20,3 @@
   <input type="submit"  value="Add Potion Type">
 
 </form>
-
-<!-- <p>Deleting a potion type will delete all associated potions. Proceed with caution.</p> -->
-
-<!-- <form action="/types/<%= type.id %>/delete" method="POST">
-<select name="type_id">
-  <% for type in @types %>
-  <option value="<%= type.id %>"><%= type.name %></option>
-  <% end %>
-</select>
-  <input type="submit" value="delete" />
-</form> -->
