@@ -1,5 +1,7 @@
 <h1>All The Potions</h1>
 
+<p>View Potions by Maker:</p>
+
 <table>
   <tr>
     <th>Name</th>
@@ -11,6 +13,7 @@
     <th>Markup</th>
     <th>Maker</th>
     <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
   <% for potion in @potions%>
@@ -24,6 +27,7 @@
     <td><%=potion.markup%></td>
     <td><a href="http://localhost:4567/makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
     <td><a href='/potions/<%=potion.id%>/edit'>Edit</a></td>
+    <td> <form method="post" action="/potions/<%=potion.id%>/delete"> <input type="submit"  value="Delete"></form> </td>
   </tr>
   <%end%>
   <tfoot>

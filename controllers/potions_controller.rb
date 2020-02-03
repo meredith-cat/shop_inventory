@@ -18,6 +18,12 @@ get '/potions/new' do
   erb(:"potions/new")
 end
 
+get '/potions/maker/:id' do
+  maker = Maker.find(params[:id])
+  @potions = maker.potions
+  erb (:"potions/index")
+end
+
 get '/potions/:id' do
   @potion = Potion.find(params[:id])
   erb(:'potions/show')

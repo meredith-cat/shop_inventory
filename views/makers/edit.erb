@@ -1,0 +1,18 @@
+<h1>Edit A Maker</h1>
+
+<form method="post" action="/makers/<%=@maker.id%>">
+
+  <label for="name">Potion Maker's Name:</label>
+  <input id="name" type="text" name="name" value="<%= @maker.name %>"/>
+
+  <label for="evil">What % Evil Are They?</label>
+  <input id="evil" type="number" name="evil" min=0 max=100 value="<%= @maker.evil %>">
+
+  <label for="certified">Are They Certified?</label>
+  <input type="radio" name="certified" value="true"> Yes
+  <input type="radio" name="certified" value="false">No<br>
+
+  <input type="submit" name="submit" value="Update">
+
+
+</form>

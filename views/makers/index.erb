@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Evilness</th>
     <th>Certified</th>
+    <th>Edit</th>
     <th>Delete</th>
   </tr>
   <% for maker in @makers%>
@@ -12,8 +13,9 @@
     <td><a href="makers/<%=maker.id%>"><%=maker.name%></a></td>
     <td><%=maker.evil%>%</td>
     <td><%=maker.certified%></td>
+    <td><a href='/makers/<%=maker.id%>/edit'>Edit</a></td>
     <td><form method="post" action='/makers/<%= maker.id %>/delete'>
-    <input type="submit"  value="Delete"></td>
+    <input type="submit"  value="Delete"></form></td>
     </tr>
     <%end%>
   </table>

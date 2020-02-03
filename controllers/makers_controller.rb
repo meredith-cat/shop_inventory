@@ -29,3 +29,8 @@ post '/makers/:id/delete' do
   @maker.delete
   redirect to ('/makers')
 end
+
+get '/makers/:id/edit' do
+  @maker = Maker.find(params[:id])
+  erb(:'makers/edit')
+end

@@ -20,8 +20,9 @@
 <label>
     Maker:
     <select name="maker_id">
-      <% for maker in @makers %>
-      <option value="<%= maker.id %>"><%= maker.name %></option>
+      <% @makers.each do |maker| %>
+      <option <%= "selected" if @potion.maker_id == maker.id %>
+        value=<%= maker.id %>> <%= maker.name %></option>
       <% end %>
     </select>
   </label>

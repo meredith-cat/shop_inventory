@@ -7,8 +7,7 @@
 <p><%=@potion.maker.name%></p>
 <p><%=@potion.type.name%></p>
 
+<a href='/potions/<%=@potion.id%>/edit'>Edit</a>
 
-  <a href='/potions/<%=@potion.id%>/edit'>Edit</a>
-
-  <form method="post" action='/potions/<%=@potion.id%>/delete'>
+<form method="post" action='/potions/<%=@potion.id%>/delete'>
     <input type="submit"  value="Delete">
