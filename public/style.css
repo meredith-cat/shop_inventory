@@ -52,3 +52,18 @@ tfoot{
   justify-content: space-between;
   justify-content: flex-start;
 }
+
+nav{
+  background: rgba(70, 34, 36, 0.2)
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  padding: 8px;
+}
