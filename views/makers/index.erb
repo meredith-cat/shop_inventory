@@ -12,13 +12,17 @@
   <tr>
     <td><a href="makers/<%=maker.id%>"><%=maker.name%></a></td>
     <td><%=maker.evil%>%</td>
-    <td><%=maker.certified%></td>
+    <td><% if maker.certified == 't'%><img src='/images/true.png' alt="gold certified">
+      <%end%>
+      <% if maker.certified == 'f'%><img src='/images/false.png' alt="grey not certified">
+        <%end%>
+    </td>
     <td><a href='/makers/<%=maker.id%>/edit'>Edit</a></td>
     <td><form method="post" action='/makers/<%= maker.id %>/delete'>
-    <input type="submit"  value="Delete"></form></td>
+      <input type="submit"  value="Delete"></form></td>
     </tr>
     <%end%>
   </table>
-<p>Deleting a maker will delete all associated potions. Proceed with caution.</p>
+  <p>Deleting a maker will delete all associated potions. Proceed with caution.</p>
 
   <a href='makers/new'>Add A Potion Maker</a>
