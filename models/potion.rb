@@ -81,6 +81,12 @@ class Potion
     @markup = (@sale_price.to_f) - (@cost_price.to_f)
   end
 
+  def markup_total
+    markup = (@sale_price.to_f) - (@cost_price.to_f)
+    total = markup * @quantity
+    return total
+  end
+
   def self.find_by_maker(id)
     sql = 'SELECT * FROM potions
     WHERE maker_id = $1 ORDER BY quantity DESC'

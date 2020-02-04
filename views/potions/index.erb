@@ -2,23 +2,23 @@
 
 <p>View Potions by Maker:</p>
 <form method="get" action="/potions/maker/">
-   <select name="maker_id">
+  <select name="maker_id">
     <%for maker in @makers%>
     <option value="<%=maker.id%>"> <%=maker.name%> </option>
     <% end %>
-   </select>
-   <input type="submit" value="Filter by Maker">
-  </form>
+  </select>
+  <input type="submit" value="Filter by Maker">
+</form>
 
-  <p>View Potions by Type:</p>
-  <form method="get" action="/potions/type/">
-     <select name="type_id">
-      <%for type in @types%>
-      <option value="<%=type.id%>"> <%=type.name%> </option>
-      <% end %>
-     </select>
-     <input type="submit" value="Filter by Type">
-    </form>
+<p>View Potions by Type:</p>
+<form method="get" action="/potions/type/">
+  <select name="type_id">
+    <%for type in @types%>
+    <option value="<%=type.id%>"> <%=type.name%> </option>
+    <% end %>
+  </select>
+  <input type="submit" value="Filter by Type">
+</form>
 
 
 <table>
@@ -62,9 +62,11 @@
     <tr>
       <td></td>
       <td></td>
-      <td>Total:</td>
+      <td>Total Inventory:</td>
       <td><%= @potions.map{|potion| potion.quantity.to_i}.reduce(:+) %></td>
       <td></td>
+      <td>Potential Profit:</td>
+      <td><%= @potions.map{|potion| potion.markup_total.to_f}.reduce(:+) %></td>
     </tr>
   </tfoot>
 </table>
