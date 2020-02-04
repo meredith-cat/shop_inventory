@@ -24,7 +24,9 @@ the names of the keys in the options hash -->
     Maker:
     <select name="maker_id">
       <% for maker in @makers %>
+      <% if maker.certified == 't' %>
       <option value="<%= maker.id %>"><%= maker.name %></option>
+      <% end %>
       <% end %>
     </select>
   </label>
