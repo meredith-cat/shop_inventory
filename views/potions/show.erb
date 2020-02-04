@@ -1,11 +1,10 @@
-<h1>This Potion</h1>
-<p><%=@potion.name%></p>
-<p><%=@potion.description%></p>
-<p><%=@potion.quantity%></p>
-<p><%=@potion.cost_price%></p>
-<p><%=@potion.sale_price%></p>
-<p><%=@potion.maker.name%></p>
-<p><%=@potion.type.name%></p>
+<h1><%=@potion.name%></h1>
+<p>Description: <%=@potion.description%></p>
+<p>Quantity: <%=@potion.quantity%></p>
+<p>Cost Price: <%=@potion.cost_price%></p>
+<p>Sale Price: <%=@potion.sale_price%></p>
+<p>Maker: <%=@potion.maker.name%></p>
+<p>Type: <%=@potion.type.name%></p>
 
 <a href='/potions/<%=@potion.id%>/edit'>Edit</a>
 

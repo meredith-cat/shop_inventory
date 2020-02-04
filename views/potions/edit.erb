@@ -3,20 +3,19 @@
 
   <label for="name">Potion Name:</label>
   <input id="name" type="text" name="name" value="<%= @potion.name %>"/>
-
+<br>
   <label for="description">Description:</label>
   <input id="description" type="text" name="description" value="<%= @potion.description %>"/>
-
+<br>
   <label for="quantity">Quantity:</label>
   <input id="quantity" type="number" name="quantity" value="<%= @potion.quantity %>"/>
-
+<br>
   <label for="cost_price">Cost Price:</label>
   <input id="cost_price" type="number" name="cost_price" value="<%= @potion.cost_price %>"/>
-
+<br>
   <label for="sale_price">Sale Price:</label>
   <input id="sale_price" type="number" name="sale_price" value="<%= @potion.sale_price %>"/>
-
-<!-- Correct values not preselected. -->
+<br>
 <label>
     Maker:
   </label>
@@ -26,7 +25,7 @@
         value=<%= maker.id %>> <%= maker.name %></option>
       <% end %>
     </select>
-
+<br>
   <label for="type_id">
     Type:
   </label>
@@ -36,7 +35,7 @@
         value=<%= type.id %>> <%= type.name %></option>
       <% end %>
     </select>
-
+<br>
   <input type="submit" name="submit" value="Update">
 
 
