@@ -34,7 +34,7 @@ table{
 th {
   text-align: center;
   padding: 20px;
-  background: rgba(70, 34, 36, 0.4)
+  background: rgba(70, 34, 36, 0.5)
 }
 
 td{
@@ -44,4 +44,11 @@ td{
 tfoot{
   padding: 20px;
   background: rgba(70, 34, 36, 0.35)
+}
+
+.filters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: flex-start;
 }

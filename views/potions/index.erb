@@ -1,6 +1,7 @@
 <h1><a href="/potions">All The Potions</a></h1>
 
-<p>View Potions by Maker:</p>
+<div class="filters">
+<label for="maker_id">View Potions by Maker: </label>
 <form method="get" action="/potions/maker/">
   <select name="maker_id">
     <%for maker in @makers%>
@@ -10,7 +11,7 @@
   <input type="submit" value="Filter by Maker">
 </form>
 
-<p>View Potions by Type:</p>
+<label for="type_id">View Potions by Type: </label>
 <form method="get" action="/potions/type/">
   <select name="type_id">
     <%for type in @types%>
@@ -19,7 +20,7 @@
   </select>
   <input type="submit" value="Filter by Type">
 </form>
-
+</div>
 
 <table>
   <tr>
