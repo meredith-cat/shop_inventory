@@ -39,7 +39,7 @@ class Type
   end
 
   def self.all()
-    sql = "SELECT * FROM types"
+    sql = "SELECT * FROM types ORDER BY name"
     results = SqlRunner.run(sql)
     types = results.map {|type| Type.new(type)}
     return types
@@ -52,25 +52,5 @@ class Type
     results = SqlRunner.run(sql, values)
     return Type.new(results.first)
   end
-
-# Not yet tested
-  # def potions
-  #   sql = "SELECT * FROM potions
-  #   WHERE type_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   potions = results.map{|potion| Potion.new(potion)}
-  #   return potions
-  # end
-  #
-  # def makers
-  #   sql = "SELECT * from makers
-  #   INNER JOIN potions on maker_id
-  #   WHERE type_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   makers = results.map{|maker| Maker.new(maker)}
-  #   return makers
-  # end
 
 end

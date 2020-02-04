@@ -1,12 +1,30 @@
 <h1><%=@potion.name%></h1>
-<p>Description: <%=@potion.description%></p>
-<p>Quantity: <%=@potion.quantity%></p>
-<p>Cost Price: <%=@potion.cost_price%></p>
-<p>Sale Price: <%=@potion.sale_price%></p>
-<p>Maker: <%=@potion.maker.name%></p>
-<p>Type: <%=@potion.type.name%></p>
 
-<a href='/potions/<%=@potion.id%>/edit'>Edit</a>
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Cost Price</th>
+    <th>Sale Price</th>
+    <th>Markup</th>
+    <th>Potential Profit</th>
+    <th>Maker</th>
+    <th>Type</th>
+  </tr>
+  <tr>
+    <td><%=@potion.description%></td>
+    <td><%=@potion.quantity%></td>
+    <td><%=@potion.cost_price%></td>
+    <td><%=@potion.sale_price%></td>
+    <td><%=@potion.markup%></td>
+    <td><%=@potion.markup_total%></td>
+    <td><%=@potion.maker.name%></td>
+    <td><%=@potion.type.name%></td>
+  </tr>
+</table>
 
-<form method="post" action='/potions/<%=@potion.id%>/delete'>
-    <input type="submit"  value="Delete">
+<div class="filters">
+  <a href='/potions/<%=@potion.id%>/edit'>Edit</a>
+  <form method="post" action='/potions/<%=@potion.id%>/delete'>
+      <input type="submit"  value="Delete">
+</div>

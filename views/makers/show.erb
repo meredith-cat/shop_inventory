@@ -1,4 +1,26 @@
-<h1>A Potion Maker</h1>
-<p><%=@maker.name%></p>
-<p>Evilness: <%=@maker.evil%>%</p>
-<p>Certified: <%=@maker.certified%></p>
+<h1><%=@maker.name%></h1>
+
+<table>
+  <tr>
+    <th>Evilness</th>
+    <th>Certified</th>
+    <th>Potions</th>
+  </tr>
+  <tr>
+    <td><%=@maker.evil%>%</td>
+    <td><% if @maker.certified == 't'%><img src='/images/true.png' alt="gold certified">
+      <%end%>
+      <% if @maker.certified == 'f'%><img src='/images/false.png' alt="grey not certified">
+      <%end%></td>
+      <td><% for potion in @maker.potions%>
+        <%=potion.name%><br>
+        <%end%>
+      </td>
+    </tr>
+  </table>
+
+<div class="filters">
+  <a href='/makers/<%=@maker.id%>/edit'>Edit</a>
+  <form method="post" action='/makers/<%= @maker.id %>/delete'>
+    <input type="submit"  value="Delete"></form>
+</div>
