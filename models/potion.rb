@@ -46,7 +46,7 @@ class Potion
   end
 
   def self.all()
-    sql = "SELECT * FROM potions"
+    sql = "SELECT * FROM potions ORDER BY quantity DESC"
     results = SqlRunner.run(sql)
     potions = results.map {|potion| Potion.new(potion)}
     return potions
@@ -83,7 +83,7 @@ class Potion
 
   def self.find_by_maker(id)
     sql = 'SELECT * FROM potions
-    WHERE maker_id = $1'
+    WHERE maker_id = $1 ORDER BY quantity DESC'
     values = [id]
     results = SqlRunner.run(sql, values)
     potions = results.map {|potion| Potion.new(potion)}
@@ -92,7 +92,7 @@ class Potion
 
   def self.find_by_type(id)
     sql = 'SELECT * FROM potions
-    WHERE type_id = $1'
+    WHERE type_id = $1 ORDER BY quantity DESC'
     values = [id]
     results = SqlRunner.run(sql, values)
     potions = results.map {|potion| Potion.new(potion)}

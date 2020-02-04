@@ -9,8 +9,8 @@
   <input id="evil" type="number" name="evil" min=0 max=100 value="<%= @maker.evil %>">
 
   <label for="certified">Are They Certified?</label>
-  <input type="radio" name="certified" value="true"> Yes
-  <input type="radio" name="certified" value="false">No<br>
+  <input type="radio" name="certified" value="true" <%= " checked" if @maker.certified == 't' %>> Yes
+  <input type="radio" name="certified" value="false" <%= " checked" if @maker.certified == 'f' %>>No<br>
 
   <input type="submit" name="submit" value="Update">
 
