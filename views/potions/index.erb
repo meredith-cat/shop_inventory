@@ -1,7 +1,8 @@
 <h1><a href="/potions">All The Potions</a></h1>
 
 <div class="filters">
-  <label for="maker_id">View Potions by Maker: </label>
+  <div class="chunk">
+    <label for="maker_id">View Potions by Maker: </label>
   <form method="get" action="/potions/maker/">
     <select name="maker_id">
       <%for maker in @makers%>
@@ -10,7 +11,9 @@
     </select>
     <input type="submit" value="Filter by Maker" class="hit">
   </form>
+    </div>
 
+<div class="chunk">
   <label for="type_id">View Potions by Type: </label>
   <form method="get" action="/potions/type/">
     <select name="type_id">
@@ -22,6 +25,13 @@
   </form>
 </div>
 
+<div class="chunk">
+  <form action="/potions/new">
+       <button type="submit">Add A Potion</button>
+    </form>
+    </div>
+</div>
+<br>
 <table>
   <tr>
     <th>Name</th>
@@ -78,4 +88,3 @@
   </tfoot>
 </table>
 <br>
-<a href="/potions/new">Add A Potion</a>
