@@ -11,7 +11,7 @@
   <td><%=type.name%></td>
   <td><form method="post" action="/types/<%=type.id%>">
     <input id="name" type="text" name="name"/>
-    <input type="submit"  value="Update">
+    <input type="submit"  value="Update" class='hit'>
   </form></td>
 </tr>
 <%end%>
@@ -20,7 +20,7 @@
 <form method="post" action="/types">
 
   <label for="name">New Potion Type:</label>
-  <input id="name" type="text" name="name"/>
-  <input type="submit"  value="Add Potion Type">
+  <input id="name" type="text" name="name" />
+  <input type="submit"  class='hit' value="Add Potion Type">
 
 </form>

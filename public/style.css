@@ -1,13 +1,15 @@
 body {
   background: url('/images/background.png');
-  background-size: 100%;
-  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff5f6;
   font-family: 'IM Fell DW Pica', serif;
   font-size: 1.5em;
 }
 
 a, a:link, a:visited {
   color: #E8D6CB;
+
   text-decoration: none;
 }
 
@@ -33,16 +35,17 @@ table{
 
 th {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   background: rgba(70, 34, 36, 0.5)
 }
 
 td{
 text-align: center;
+padding: 5px;
 }
 
 tfoot{
-  padding: 20px;
+  padding: 5px;
   background: rgba(70, 34, 36, 0.35)
 }
 
@@ -52,6 +55,7 @@ tfoot{
   justify-content: space-between;
   justify-content: flex-start;
 }
+
 
 nav{
   background: rgba(70, 34, 36, 0.2)
@@ -66,4 +70,28 @@ ul {
 li {
   display: inline;
   padding: 8px;
+}
+
+button{
+  background-color: #E8D6CB;
+  color: rgb(70, 34, 36);
+  border-radius: 4px;
+}
+
+.hit{
+  background-color: #E8D6CB;
+  color: rgb(70, 34, 36);
+  border-radius: 4px;
+}
+
+input{
+  background-color: #E8D6CB;
+  color: rgb(70, 34, 36);
+  border-radius: 4px;
+}
+
+select{
+  background-color: #E8D6CB;
+  color: rgb(70, 34, 36);
+  border-radius: 4px;
 }

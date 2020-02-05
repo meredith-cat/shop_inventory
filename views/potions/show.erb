@@ -24,7 +24,10 @@
 </table>
 
 <div class="filters">
-  <a href='/potions/<%=@potion.id%>/edit'>Edit</a>
+  <form action='/potions/<%=@potion.id%>/edit'>
+       <button type="submit">Edit</button>
+    </form>
   <form method="post" action='/potions/<%=@potion.id%>/delete'>
       <input type="submit"  value="Delete">
+    </form>
 </div>

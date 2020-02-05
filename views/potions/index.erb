@@ -1,25 +1,25 @@
 <h1><a href="/potions">All The Potions</a></h1>
 
 <div class="filters">
-<label for="maker_id">View Potions by Maker: </label>
-<form method="get" action="/potions/maker/">
-  <select name="maker_id">
-    <%for maker in @makers%>
-    <option value="<%=maker.id%>"> <%=maker.name%> </option>
-    <% end %>
-  </select>
-  <input type="submit" value="Filter by Maker">
-</form>
+  <label for="maker_id">View Potions by Maker: </label>
+  <form method="get" action="/potions/maker/">
+    <select name="maker_id">
+      <%for maker in @makers%>
+      <option value="<%=maker.id%>"> <%=maker.name%> </option>
+      <% end %>
+    </select>
+    <input type="submit" value="Filter by Maker" class="hit">
+  </form>
 
-<label for="type_id">View Potions by Type: </label>
-<form method="get" action="/potions/type/">
-  <select name="type_id">
-    <%for type in @types%>
-    <option value="<%=type.id%>"> <%=type.name%> </option>
-    <% end %>
-  </select>
-  <input type="submit" value="Filter by Type">
-</form>
+  <label for="type_id">View Potions by Type: </label>
+  <form method="get" action="/potions/type/">
+    <select name="type_id">
+      <%for type in @types%>
+      <option value="<%=type.id%>"> <%=type.name%> </option>
+      <% end %>
+    </select>
+    <input type="submit" value="Filter by Type" class="hit">
+  </form>
 </div>
 
 <table>
@@ -47,8 +47,10 @@
     <td><%=potion.sale_price%></td>
     <td><%=potion.markup%></td>
     <td><a href="http://localhost:4567/makers/<%=potion.maker.id%>"><%=potion.maker.name%></a></td>
-    <td><a href='/potions/<%=potion.id%>/edit'>Edit</a></td>
-    <td> <form method="post" action="/potions/<%=potion.id%>/delete"> <input type="submit"  value="Delete"></form> </td>
+    <td><form action='/potions/<%=potion.id%>/edit'>
+         <button type="submit">Edit</button>
+      </form></td>
+      <td> <form method="post" action="/potions/<%=potion.id%>/delete"> <input type="submit" value="Delete" class="hit"</form> </td>
     <td>
       <% if potion.quantity.to_i < 1%><img src='/images/red.png' alt="a small potion bottle">
       <%end%>

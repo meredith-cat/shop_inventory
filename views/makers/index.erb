@@ -17,9 +17,11 @@
       <% if maker.certified == 'f'%><img src='/images/false.png' alt="grey not certified">
         <%end%>
     </td>
-    <td><a href='/makers/<%=maker.id%>/edit'>Edit</a></td>
+    <td><form action='/potions/<%=maker.id%>/edit'>
+         <button type="submit">Edit</button>
+      </form></td>
     <td><form method="post" action='/makers/<%= maker.id %>/delete'>
-      <input type="submit"  value="Delete"></form></td>
+      <input type="submit"  value="Delete" class="hit"></form></td>
     </tr>
     <%end%>
   </table>
