@@ -76,22 +76,30 @@ button{
   background-color: #E8D6CB;
   color: rgb(70, 34, 36);
   border-radius: 4px;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 16px;
 }
 
 .hit{
   background-color: #E8D6CB;
   color: rgb(70, 34, 36);
   border-radius: 4px;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 16px;
 }
 
 input{
   background-color: #E8D6CB;
   color: rgb(70, 34, 36);
   border-radius: 4px;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 16px;
 }
 
 select{
   background-color: #E8D6CB;
   color: rgb(70, 34, 36);
   border-radius: 4px;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 16px;
 }
