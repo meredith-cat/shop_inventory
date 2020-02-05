@@ -9,7 +9,6 @@ body {
 
 a, a:link, a:visited {
   color: #E8D6CB;
-
   text-decoration: none;
 }
 
@@ -18,8 +17,8 @@ a:hover, a:active, a:focus {
 }
 
 img{
- max-width:40%;
- max-height:40%;
+  max-width:40%;
+  max-height:40%;
 }
 
 .h_box {
@@ -40,8 +39,8 @@ th {
 }
 
 td{
-text-align: center;
-padding: 5px;
+  text-align: center;
+  padding: 5px;
 }
 
 tfoot{
@@ -54,7 +53,6 @@ tfoot{
   flex-direction: row;
   justify-content: space-between;
 }
-
 
 nav{
   background: rgba(70, 34, 36, 0.2)

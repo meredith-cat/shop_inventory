@@ -1,11 +1,13 @@
 <h1>Our Trusted Potion Makers</h1>
 <p>N.b. please do not purchase potions from makers other than those below! Especially not the giant magical snail!</p>
+
 <div class="chunk">
   <form action="/makers/new">
-       <button type="submit">Add A Potion Maker</button>
-    </form>
-    </div>
-    <br>
+    <button type="submit">Add A Potion Maker</button>
+  </form>
+</div>
+<br>
+
 <table>
   <tr>
     <th>Name</th>
@@ -21,11 +23,11 @@
     <td><% if maker.certified == 't'%><img src='/images/true.png' alt="gold certified">
       <%end%>
       <% if maker.certified == 'f'%><img src='/images/false.png' alt="grey not certified">
-        <%end%>
+      <%end%>
     </td>
     <td><form action='/makers/<%=maker.id%>/edit'>
-         <button type="submit">Edit</button>
-      </form></td>
+      <button type="submit">Edit</button>
+    </form></td>
     <td><form method="post" action='/makers/<%= maker.id %>/delete'>
       <input type="submit"  value="Delete" class="hit"></form></td>
     </tr>

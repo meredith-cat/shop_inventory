@@ -6,15 +6,15 @@
     <th>Edit</th>
   </tr>
 
-<% for type in @types%>
-<tr>
-  <td><%=type.name%></td>
-  <td><form method="post" action="/types/<%=type.id%>">
-    <input id="name" type="text" name="name"/>
-    <input type="submit"  value="Update" class='hit'>
-  </form></td>
-</tr>
-<%end%>
+  <% for type in @types%>
+  <tr>
+    <td><%=type.name%></td>
+    <td><form method="post" action="/types/<%=type.id%>">
+      <input id="name" type="text" name="name"/>
+      <input type="submit"  value="Update" class='hit'>
+    </form></td>
+  </tr>
+  <%end%>
 </table>
 <h2>Add A Potion Type</h2>
 <form method="post" action="/types">

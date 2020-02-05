@@ -24,7 +24,6 @@ class Potion
     @id = results.first['id'].to_i
   end
 
-# TO TEST
   def update
     sql = 'UPDATE potions
     SET (name, description, quantity, cost_price, sale_price, maker_id, type_id) = ($1, $2, $3, $4, $5, $6, $7)
@@ -61,13 +60,12 @@ class Potion
   end
 
   def maker
-   sql = "SELECT * FROM makers
-   WHERE id = $1"
-   values = [@maker_id]
-   results = SqlRunner.run( sql, values )
-   return Maker.new(results.first)
- end
-
+    sql = "SELECT * FROM makers
+    WHERE id = $1"
+    values = [@maker_id]
+    results = SqlRunner.run( sql, values )
+    return Maker.new(results.first)
+  end
 
   def type
     sql = "SELECT * FROM types
@@ -82,7 +80,7 @@ class Potion
   end
 
   def markup_total
-    markup = (@sale_price.to_f) - (@cost_price.to_f)
+    markup = self.markup
     @total = markup * @quantity
     return @total
   end

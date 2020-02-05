@@ -4,6 +4,7 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/maker.rb')
 also_reload( '../models/*' )
 
+
 get '/makers' do
   @makers = Maker.all
   erb(:"makers/index")

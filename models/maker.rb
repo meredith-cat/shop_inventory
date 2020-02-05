@@ -20,7 +20,6 @@ class Maker
     @id = results.first['id'].to_i
   end
 
-# TO TEST
   def update
     sql = 'UPDATE makers
     SET (name, evil, certified) = ($1, $2, $3)
@@ -56,7 +55,6 @@ class Maker
     return Maker.new(results.first)
   end
 
-# TO TEST
   def potions
     sql = "SELECT * FROM potions
     WHERE maker_id = $1"

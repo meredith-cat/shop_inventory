@@ -5,14 +5,16 @@
   <label for="name">Potion Maker's Name:</label>
   <input id="name" type="text" name="name" value="<%= @maker.name %>"/>
   <br>
+
   <label for="evil">What % Evil Are They?</label>
   <input id="evil" type="number" name="evil" min=0 max=100 value="<%= @maker.evil %>">
   <br>
+
   <label for="certified">Are They Certified?</label>
   <input type="radio" name="certified" value="true" <%= " checked" if @maker.certified == 't' %>> Yes
   <input type="radio" name="certified" value="false" <%= " checked" if @maker.certified == 'f' %>>No<br>
   <br>
-  <input type="submit" name="submit" value="Update">
 
+  <input type="submit" name="submit" value="Update">
 
 </form>
