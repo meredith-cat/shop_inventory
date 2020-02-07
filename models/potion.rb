@@ -94,12 +94,18 @@ class Potion
     return potions
   end
 
+# This method will be used to select all poitions with a specific type_id property, this function will have a parameter of the type id we will use.
   def self.find_by_type(id)
+    # First we will write an sql query to return all the potions from the potions table with a type_id that matches the value passed in as our argument
     sql = 'SELECT * FROM potions
     WHERE type_id = $1 ORDER BY quantity DESC'
+    # We define our values for the SqlRunner as the id parameter we pass in
     values = [id]
+    # We will run the Sql query with the statement and values as defined, then assign that value to 'results'
     results = SqlRunner.run(sql, values)
+    # As we are expecting to return potentially more than one potion, we will map these results to an array of new potions
     potions = results.map {|potion| Potion.new(potion)}
+    # Finally we will return the new array
     return potions
   end
 
