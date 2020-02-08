@@ -9,17 +9,27 @@ Users should be able to filter the products by type and manufacturers.
 
 Project Notes:
 Having worked in ecommerce I was familiar with some inventory management systems such as Amazon Seller Central, Shopify and Rakuten Smartfill. I wanted to explore the functionality of these systems.
-
 This project allowed me to develop my understanding of Ruby, SQL and RESTful routes.
 Each class in my project has CRUD functionality which was a focus for this section of the course.
 
-![Inventory Management Screen](public/images/inventory_page.png)
-
 I chose to style my project after low-resolution pixel art games & themed my inventory around fantasy potions.
+Screenshots:
+
+![Home Page](public/images/home_page.png)
+Home Page
+
+![Inventory Management Screen](public/images/inventory_page.png)
+Inventory Index
+
+![Potion Makers Screen](public/images/potion_makers.png)
+Potion Makers Index
+
+![Potion Types Screen](public/images/inventory_page.png)
+Potion Types Index
 
 Assets:
-Background Image [OpenGameArt](https://opengameart.org/content/backgrounds-3)
-Pixels [Itch.io](https://tfonez.itch.io/pixel-assets)
+1. Background Image [OpenGameArt](https://opengameart.org/content/backgrounds-3)
+2. Pixels [Itch.io](https://tfonez.itch.io/pixel-assets)
 
 Technologies Used: Ruby, Sinatra, HTML, CSS, Atom
 
