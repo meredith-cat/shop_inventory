@@ -13,7 +13,7 @@ Having worked in ecommerce I was familiar with some inventory management systems
 This project allowed me to develop my understanding of Ruby, SQL and RESTful routes.
 Each class in my project has CRUD functionality which was a focus for this section of the course.
 
-![Inventory Management Screen]('/images/inventory_page.png')
+![Inventory Management Screen]('public/images/inventory_page.png')
 
 I chose to style my project after low-resolution pixel art games & themed my inventory around fantasy potions.
 
